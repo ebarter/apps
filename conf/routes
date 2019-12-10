@@ -1,0 +1,13 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                                       controllers.Application.index()
+
+GET     /api/test/:nip/:password/:supervisor                    controllers.User.testLogin(nip:String, password:String, supervisor:Integer)
+DELETE  /api/test/:nip                                          controllers.User.testDelete(nip:String)
+POST    /api/test/register                                      controllers.User.testRegister()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                                           controllers.Assets.at(path="/public", file)
